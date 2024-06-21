@@ -1,0 +1,29 @@
+/* .alert-body {
+    width: 10rem;
+    height: 3rem;
+    color: white;
+    background-color: magenta;
+} */
+
+.alert {
+    width: 10rem;
+    height: 3rem;
+    color: white;
+    border-radius: 0.5rem;
+    background-color: orange;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+
+}
+
+.funga {
+    margin-top: 0.2rem;
+    margin-left: 0.4rem;
+    color: red;
+    cursor: pointer;
+}
