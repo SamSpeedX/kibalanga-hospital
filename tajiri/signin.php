@@ -6,12 +6,12 @@
 </head>
 <body>
     <h2>Admin Login</h2>
-    <form method="post" action="">
+    <form method="post" action="mfumo/signup.php">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Sigin">
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+        <button type="submit">Signin</button>
     </form>
 </body>
 </html>
