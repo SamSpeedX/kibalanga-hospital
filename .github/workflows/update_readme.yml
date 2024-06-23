@@ -1,0 +1,42 @@
+name: Update README with contributors
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'  # This will run the workflow every Sunday at midnight
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Fetch Contributors
+      id: fetch_contributors
+      run: |
+        CONTRIBUTORS=$(curl -s https://api.github.com/repos/${{ github.repository }}/contributors)
+        echo "::set-output name=contributors::$CONTRIBUTORS"
+
+    - name: Update README
+      run: |
+        CONTRIBUTORS_JSON="${{ steps.fetch_contributors.outputs.contributors }}"
+        CONTRIBUTORS_MD=$(echo $CONTRIBUTORS_JSON | jq -r '.[] | "* [" + .login + "](" + .html_url + ") - " + (.contributions|tostring) + " contributions"')
+        awk -v contributors="$CONTRIBUTORS_MD" '
+          BEGIN {found=0}
+          /^<!-- CONTRIBUTORS START -->$/ {found=1; print; print contributors; next}
+          /^<!-- CONTRIBUTORS END -->$/ {found=0}
+          !found {print}
+        ' README.md > README.md.tmp && mv README.md.tmp README.md
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m 'Update README with contributors'
+        git push
