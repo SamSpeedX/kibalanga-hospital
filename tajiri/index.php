@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1>Karibu Kibalanga Hospitali</h1>
-    <a href="admin/login.php">Admin Login</a>
+    <a href="signin.php">Admin Login</a>
 </body>
 </html>
