@@ -2,10 +2,10 @@
 session_start();
 
 if (!isset($_SESSION['uid'])) {
-    header("location: ./registration/sigin.php");
+    header("location: ./mfumo/checkpoint.php?hali=kagua");
     exit;
 } else {
-    header("location: ./en/home.php");
+    header("location: ./mfumo/checkpoint.php?hali=muelekeo");
     exit;
 }
 ?>
