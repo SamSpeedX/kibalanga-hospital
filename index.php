@@ -8,8 +8,8 @@ require './config/app.php';
     <meta charset="utf-8">
     <title>Home | <?php echo APP_NAME; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Honelo" name="keywords">
-    <meta content="Honelo despansery is despansery that located in Kabuku Tanga." name="description">
+   
+    <meta content=" despansery is despansery that located in Kabuku Tanga." name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
