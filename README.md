@@ -1,0 +1,1 @@
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=kibalanga-hospital&type=git&repository=SamSpeedX%2Fkibalanga-hospital&branch=main&builder=buildpack&env%5B%5D=&ports=8000%3Bhttp%3B%2F)
